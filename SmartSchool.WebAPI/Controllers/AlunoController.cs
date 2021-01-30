@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using SmartSchool.WebAPI.Data;
 using SmartSchool.WebAPI.Models;
 
@@ -53,7 +54,7 @@ namespace SmartSchool.WebAPI.Controllers
 
         [HttpPut("{id}")]
         public IActionResult PutAluno(int id, Aluno aluno){
-            var alu = _context.Alunos.FirstOrDefault(a => a.Id == id);
+            var alu = _context.Alunos.AsNoTracking().FirstOrDefault(a => a.Id == id);
 
             if(alu == null){
                 return NotFound();

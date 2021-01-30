@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace SmartSchool.WebAPI.Models
 {
@@ -14,8 +15,14 @@ namespace SmartSchool.WebAPI.Models
 
         }
         public int Id { get; set; }
+
+        [Required]
         public string Nome { get; set; }
+
+        [Required]
         public string Sobrenome { get; set; }
+
+        [Required]
         public string Telefone { get; set; }
         public IEnumerable<AlunoDisciplina> AlunosDisciplina { get; set; }
     }

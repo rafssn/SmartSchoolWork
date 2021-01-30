@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace SmartSchool.WebAPI.Models
 {
     public class AlunoDisciplina
@@ -8,8 +10,12 @@ namespace SmartSchool.WebAPI.Models
             this.AlunoId = alunoId;
             this.DisciplinaId = disciplinaId;
         }
+
+        [Required]
         public int AlunoId { get; set; }
         public Aluno Aluno { get; set; }
+
+        [Required]
         public int DisciplinaId { get; set; }
         public Disciplina Disciplina { get; set; }
     }
